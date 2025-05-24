@@ -16,7 +16,7 @@ document.addEventListener('mousemove', (e) => {
 // Phase 2: Golden Breath appears after 7.3 seconds, extremely slowly
 setTimeout(() => {
   pulse.style.visibility = 'visible';
-  pulse.style.transition = 'opacity 12s ease'; // slower, like a divine yawn
+  pulse.style.transition = 'opacity 30s ease'; // as slow as possible
   pulse.style.opacity = '1';
 }, 7300); // 7.3 seconds
 
