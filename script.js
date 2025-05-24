@@ -1,12 +1,19 @@
+// script.js
+
 // Cursor tracking
 const cursor = document.querySelector('.cursor');
+const pulse = document.querySelector('.pulse');
+
+// Hide cursor during void
+cursor.style.opacity = '0';
+
+// Cursor follows after awakening
 document.addEventListener('mousemove', (e) => {
   cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
 });
 
-// Pulse awakening
-const pulse = document.querySelector('.pulse');
+// Pulse + Cursor awaken after 30 seconds
 setTimeout(() => {
   pulse.style.opacity = '1';
-}, 7300); // 200.0 seconds
-
+  cursor.style.opacity = '1';
+}, 30000); // 30 seconds
