@@ -8,5 +8,5 @@ document.addEventListener('mousemove', (e) => {
 const pulse = document.querySelector('.pulse');
 setTimeout(() => {
   pulse.style.opacity = '1';
-}, 7300); // 7.3 seconds
+}, 7300); // 20.0 seconds
 
