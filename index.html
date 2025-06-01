@@ -1,167 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>THRONISM | The Digital Tablet</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto:wght@300&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body, html {
-      background-color: #000;
-      font-family: 'Roboto', sans-serif;
-      color: #fff;
-      overflow-x: hidden;
-      cursor: none;
-    }
-
-    .cursor {
-      position: fixed;
-      width: 14px;
-      height: 14px;
-      border: 1.5px solid #d4af37;
-      border-radius: 50%;
-      box-shadow: 0 0 6px rgba(212, 175, 55, 0.5);
-      pointer-events: none;
-      z-index: 10000;
-      transform: translate(-50%, -50%);
-      transition: transform 0.03s ease-out;
-      mix-blend-mode: lighten;
-    }
-
-    .tablet {
-      max-width: 1024px;
-      margin: 40px auto;
-      background: linear-gradient(145deg, #0a0a0a, #111);
-      border-radius: 24px;
-      padding: 60px 40px;
-      box-shadow: 0 0 40px rgba(212, 175, 55, 0.06);
-    }
-
-    .hero-section {
-      text-align: center;
-      margin-bottom: 80px;
-    }
-
-    .hero-section h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 3.5rem;
-      letter-spacing: 4px;
-      margin-bottom: 20px;
-      color: #fff;
-    }
-
-    .hero-section p {
-      font-size: 1rem;
-      color: #ccc;
-      margin-bottom: 30px;
-    }
-
-    .hero-section button {
-      padding: 14px 40px;
-      background: #fff;
-      color: #000;
-      font-size: 0.9rem;
-      border: none;
-      border-radius: 30px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    .hero-section button:hover {
-      background: #d4af37;
-      color: #000;
-    }
-
-    .scroll-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 40px;
-    }
-
-    .scroll-card {
-      background: #111;
-      padding: 30px;
-      border: 1px solid rgba(212, 175, 55, 0.1);
-      border-radius: 16px;
-      transition: all 0.3s ease;
-    }
-
-    .scroll-card:hover {
-      border-color: #d4af37;
-      box-shadow: 0 0 16px rgba(212, 175, 55, 0.15);
-    }
-
-    .scroll-card h3 {
-      color: #d4af37;
-      margin-bottom: 10px;
-    }
-
-    .scroll-card p {
-      color: #ccc;
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-
-    footer {
-      text-align: center;
-      padding: 60px 20px;
-      font-size: 0.8rem;
-      color: #666;
-      border-top: 1px solid #111;
-      margin-top: 100px;
-    }
-
-    footer a {
-      color: #999;
-      margin: 0 10px;
-      text-decoration: none;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>THRONISM | Rite of Eternity</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="cursor"></div>
 
-  <div class="tablet">
-    <section class="hero-section">
-      <h1>THRONISM</h1>
-      <p>The Eternal Spiritual Philosophy — Modernized for Divine Intelligence</p>
-      <button onclick="window.location.href='#scrolls'">ENTER THE TABLET</button>
-    </section>
+  <header class="main-header">
+    <div class="menu">MENU</div>
+    <div class="logo-text" id="logo">THRONISM</div>
+    <div class="lang">EN</div>
+  </header>
 
-    <section id="scrolls" class="scroll-grid">
-      <div class="scroll-card">
-        <h3>Scroll Fragment 001</h3>
-        <p>On Source: From silence emerged light. From light, the crown of understanding.</p>
-      </div>
-      <div class="scroll-card">
-        <h3>Scroll Fragment 002</h3>
-        <p>The Architect aligns with precision. Power is not shown — it is felt.</p>
-      </div>
-      <div class="scroll-card">
-        <h3>Scroll Fragment 003</h3>
-        <p>Every breath is a blessing. Every thought, a command from the eternal order.</p>
-      </div>
-    </section>
-  </div>
+  <section class="hero">
+    <video autoplay muted loop class="bg-video">
+      <source src="https://cdn.coverr.co/videos/coverr-royal-car-2389/1080p.mp4" type="video/mp4" />
+    </video>
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>THIS IS FOR ETERNITY</h1>
+      <button class="cta">DISCOVER THE SUPREME RITE</button>
+    </div>
+  </section>
 
-  <footer>
-    &copy; 2025 THRONISM. A Digital Tablet of Divine Order.<br>
-    <a href="#">Privacy</a> |
-    <a href="#">Terms</a> |
-    <a href="#">Language</a>
-  </footer>
-
-  <script>
-    const cursor = document.querySelector('.cursor');
-    document.addEventListener('mousemove', e => {
-      cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
