@@ -1,231 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>THRONISM | Africa’s Eternal Spiritual Philosophy</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THRONISM | The Eternal Spiritual Realm</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto:wght@300&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-    body {
+
+    body, html {
+      height: 100%;
+      font-family: 'Roboto', sans-serif;
       background-color: #000;
-      color: #f5f5f5;
-      font-family: 'Playfair Display', serif;
-      overflow-x: hidden;
+      overflow: hidden;
       cursor: none;
     }
 
     .cursor {
       position: fixed;
-      top: 0;
-      left: 0;
       width: 14px;
       height: 14px;
       border: 1.5px solid #d4af37;
       border-radius: 50%;
       box-shadow: 0 0 6px rgba(212, 175, 55, 0.5);
-      mix-blend-mode: lighten;
-      z-index: 10000;
       pointer-events: none;
+      z-index: 10000;
       transform: translate(-50%, -50%);
-      transition: transform 0.04s ease-out;
-    }
-
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      padding: 30px 40px;
-      backdrop-filter: blur(14px);
-      background-color: rgba(0, 0, 0, 0.6);
-      z-index: 9999;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: all 0.3s ease-in-out;
-      border-bottom: 1px solid rgba(212, 175, 55, 0.15);
-    }
-
-    .menu {
-      flex: 1;
-      text-align: left;
-    }
-
-    .logo-container {
-      flex: 1;
-      text-align: center;
-    }
-
-    .logo {
-      font-size: 3rem;
-      color: #d4af37;
-      transition: all 0.3s ease-in-out;
-      letter-spacing: 2px;
-    }
-
-    .logo-img {
-      height: 50px;
-      display: none;
-    }
-
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin-left: 30px;
-      font-size: 0.9rem;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: #d4af37;
+      transition: transform 0.03s ease-out;
+      mix-blend-mode: lighten;
     }
 
     .hero {
+      width: 100%;
       height: 100vh;
-      background: url('https://images.unsplash.com/photo-1617347454971-bd9c6231ec13?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+      background: url('https://images.unsplash.com/photo-1622519408461-fb0cdb0fa8bc?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
       display: flex;
+      flex-direction: column;
+      justify-content: center;
       align-items: center;
-      justify-content: center;
+      position: relative;
       text-align: center;
-      padding: 0 20px;
     }
 
-    .hero h1 {
-      font-size: 3.5rem;
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(4px);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
       color: #fff;
-      text-shadow: 0 0 15px #000;
-      max-width: 800px;
-      animation: fadeInUp 2s ease forwards;
     }
 
-    @keyframes fadeInUp {
-      0% {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .scrolls-section {
-      background-color: #111;
-      padding: 80px 20px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-    }
-
-    .scroll-card {
-      background-color: #000;
-      border: 1px solid rgba(212, 175, 55, 0.15);
-      padding: 40px;
-      width: 300px;
-      transition: all 0.3s ease;
-      box-shadow: 0 0 8px rgba(0,0,0,0.2);
-    }
-
-    .scroll-card:hover {
-      border-color: #d4af37;
-      box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
-    }
-
-    .scroll-card h2 {
-      color: #d4af37;
-      margin-bottom: 15px;
-      font-size: 1.4rem;
-    }
-
-    .scroll-card p {
-      color: #ccc;
+    .hero-content h2 {
+      font-weight: 300;
+      letter-spacing: 4px;
       font-size: 1rem;
-      line-height: 1.6;
+      color: #e0e0e0;
     }
 
-    footer {
-      background-color: #000;
-      color: #999;
-      text-align: center;
-      padding: 60px 20px;
-      font-size: 0.8rem;
-      border-top: 1px solid #333;
+    .hero-content h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 4.5rem;
+      letter-spacing: 8px;
+      margin: 10px 0;
+      color: #ffffff;
+    }
+
+    .hero-content button {
+      margin-top: 30px;
+      padding: 14px 34px;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      border: none;
+      border-radius: 30px;
+      background-color: #ffffff;
+      color: #000;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .hero-content button:hover {
+      background-color: #d4af37;
+      color: #000;
+    }
+
+    .top-nav {
+      position: absolute;
+      top: 20px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 40px;
+      align-items: center;
+      z-index: 3;
+    }
+
+    .top-nav .menu {
+      font-size: 0.9rem;
+      color: #fff;
+      letter-spacing: 1px;
+    }
+
+    .top-nav .seal {
+      height: 40px;
+    }
+
+    .top-nav .find {
+      font-size: 0.9rem;
+      color: #fff;
+      letter-spacing: 1px;
     }
   </style>
 </head>
 <body>
   <div class="cursor"></div>
 
-  <header id="mainHeader">
-    <div class="menu">
-      <nav>
-        <a href="#">Scrolls</a>
-        <a href="#">Codex</a>
-        <a href="#">The Rite</a>
-        <a href="#">Contact</a>
-      </nav>
-    </div>
-    <div class="logo-container">
-      <div class="logo" id="logoText">THRONISM</div>
-      <img src="/mnt/data/ChatGPT Image May 19, 2025, 08_03_02 PM.png" alt="Seal" class="logo-img" id="logoImage">
-    </div>
-  </header>
+  <div class="hero">
+    <div class="hero-overlay"></div>
 
-  <section class="hero">
-    <h1>Fortune Crowns the Prepared.<br>Africa’s Eternal Spiritual Philosophy.</h1>
-  </section>
+    <div class="top-nav">
+      <div class="menu">MENU</div>
+      <img src="/mnt/data/ChatGPT Image May 19, 2025, 08_03_02 PM.png" alt="Seal" class="seal">
+      <div class="find">FIND A GUIDE</div>
+    </div>
 
-  <section class="scrolls-section">
-    <div class="scroll-card">
-      <h2>Scroll Fragment 001</h2>
-      <p>On Source: Silence births the breath. The breath births the Crown.</p>
+    <div class="hero-content">
+      <h2>THE ETERNAL ORDER OF</h2>
+      <h1>THRONISM</h1>
+      <button onclick="window.location.href='#scrolls'">ENTER THE REALM</button>
     </div>
-    <div class="scroll-card">
-      <h2>Scroll Fragment 002</h2>
-      <p>Dominion begins not with noise but stillness. Align, and command.</p>
-    </div>
-    <div class="scroll-card">
-      <h2>Scroll Fragment 003</h2>
-      <p>What is written in gold cannot fade. The Architect moves unseen.</p>
-    </div>
-  </section>
-
-  <footer>
-    &copy; 2025 THRONISM. All Rights Reserved. The Eternal Spiritual Philosophy.<br>
-    This site is a luxury journal inspired by divine kingship and cosmic wisdom.
-  </footer>
+  </div>
 
   <script>
     const cursor = document.querySelector('.cursor');
     document.addEventListener('mousemove', e => {
       cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-    });
-
-    const header = document.getElementById('mainHeader');
-    const logoText = document.getElementById('logoText');
-    const logoImage = document.getElementById('logoImage');
-    let lastScroll = 0;
-
-    window.addEventListener('scroll', () => {
-      let currentScroll = window.pageYOffset;
-      if (currentScroll > lastScroll && currentScroll > 100) {
-        header.style.padding = '10px 30px';
-        logoText.style.display = 'none';
-        logoImage.style.display = 'inline-block';
-      } else {
-        header.style.padding = '30px 40px';
-        logoText.style.display = 'block';
-        logoImage.style.display = 'none';
-      }
-      lastScroll = currentScroll;
     });
   </script>
 </body>
