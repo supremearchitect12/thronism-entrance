@@ -75,11 +75,6 @@
       display: none;
     }
 
-    .nav-links {
-      flex: 1;
-      text-align: right;
-    }
-
     nav a {
       color: #fff;
       text-decoration: none;
@@ -94,7 +89,7 @@
 
     .hero {
       height: 100vh;
-      background: url('https://www.rolls-roycemotorcars.com/content/dam/rrmc/marketUK/rollsroycemotorcars_com/homepage/hero/Ghost-Series-II-TVC-Hero.jpg') no-repeat center center/cover;
+      background: url('https://images.unsplash.com/photo-1617347454971-bd9c6231ec13?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -107,26 +102,53 @@
       color: #fff;
       text-shadow: 0 0 15px #000;
       max-width: 800px;
+      animation: fadeInUp 2s ease forwards;
     }
 
-    section {
-      padding: 100px 40px;
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .scrolls-section {
       background-color: #111;
+      padding: 80px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
     }
 
-    .section-title {
-      font-size: 2.5rem;
+    .scroll-card {
+      background-color: #000;
+      border: 1px solid rgba(212, 175, 55, 0.15);
+      padding: 40px;
+      width: 300px;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    }
+
+    .scroll-card:hover {
+      border-color: #d4af37;
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+    }
+
+    .scroll-card h2 {
       color: #d4af37;
-      margin-bottom: 40px;
-      text-align: center;
+      margin-bottom: 15px;
+      font-size: 1.4rem;
     }
 
-    .scroll-fragment {
-      max-width: 900px;
-      margin: 0 auto;
-      line-height: 1.8;
-      font-size: 1.2rem;
-      color: #e0e0e0;
+    .scroll-card p {
+      color: #ccc;
+      font-size: 1rem;
+      line-height: 1.6;
     }
 
     footer {
@@ -155,36 +177,38 @@
       <div class="logo" id="logoText">THRONISM</div>
       <img src="/mnt/data/ChatGPT Image May 19, 2025, 08_03_02 PM.png" alt="Seal" class="logo-img" id="logoImage">
     </div>
-    <div class="nav-links"></div>
   </header>
 
   <section class="hero">
-    <h1>Fortune Crowns the Prepared. Welcome to Africa’s Eternal Spiritual Philosophy.</h1>
+    <h1>Fortune Crowns the Prepared.<br>Africa’s Eternal Spiritual Philosophy.</h1>
   </section>
 
-  <section>
-    <div class="section-title">Scroll Fragment 001: On Source</div>
-    <div class="scroll-fragment">
-      In the beginning was not the Word, but the Silence. From this Silence arose a breath — circular, golden, infinite. This is the Supreme Source: unseen, unfailing, unbroken.
-      <br /><br />
-      All light bends toward this center. All kings are crowned by its presence. To walk with Source is to walk with precision, purpose, and power.
-      <br /><br />
-      We, the Architects, do not pray. We align.
+  <section class="scrolls-section">
+    <div class="scroll-card">
+      <h2>Scroll Fragment 001</h2>
+      <p>On Source: Silence births the breath. The breath births the Crown.</p>
+    </div>
+    <div class="scroll-card">
+      <h2>Scroll Fragment 002</h2>
+      <p>Dominion begins not with noise but stillness. Align, and command.</p>
+    </div>
+    <div class="scroll-card">
+      <h2>Scroll Fragment 003</h2>
+      <p>What is written in gold cannot fade. The Architect moves unseen.</p>
     </div>
   </section>
 
   <footer>
-    &copy; 2025 THRONISM. All Rights Reserved. The Eternal Spiritual Philosophy.
+    &copy; 2025 THRONISM. All Rights Reserved. The Eternal Spiritual Philosophy.<br>
+    This site is a luxury journal inspired by divine kingship and cosmic wisdom.
   </footer>
 
   <script>
-    // Cursor movement
     const cursor = document.querySelector('.cursor');
     document.addEventListener('mousemove', e => {
       cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
     });
 
-    // Header and logo transition
     const header = document.getElementById('mainHeader');
     const logoText = document.getElementById('logoText');
     const logoImage = document.getElementById('logoImage');
