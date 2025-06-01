@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>THRONISM | The Eternal Spiritual Realm</title>
+  <title>THRONISM | The Digital Tablet</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto:wght@300&display=swap" rel="stylesheet">
   <style>
     * {
@@ -13,9 +13,9 @@
     }
 
     body, html {
-      height: 200vh;
-      font-family: 'Roboto', sans-serif;
       background-color: #000;
+      font-family: 'Roboto', sans-serif;
+      color: #fff;
       overflow-x: hidden;
       cursor: none;
     }
@@ -34,166 +34,133 @@
       mix-blend-mode: lighten;
     }
 
-    .hero {
-      width: 100%;
-      height: 100vh;
-      background: url('https://images.unsplash.com/photo-1622519408461-fb0cdb0fa8bc?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      position: relative;
+    .tablet {
+      max-width: 1024px;
+      margin: 40px auto;
+      background: linear-gradient(145deg, #0a0a0a, #111);
+      border-radius: 24px;
+      padding: 60px 40px;
+      box-shadow: 0 0 40px rgba(212, 175, 55, 0.06);
+    }
+
+    .hero-section {
       text-align: center;
-      overflow: hidden;
+      margin-bottom: 80px;
     }
 
-    .hero-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.45);
-      backdrop-filter: blur(4px);
-      z-index: 1;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      color: #fff;
-      transition: all 0.6s ease;
-    }
-
-    .hero-content h2 {
-      font-weight: 300;
-      letter-spacing: 4px;
-      font-size: 1rem;
-      color: #e0e0e0;
-      opacity: 1;
-      transition: opacity 0.6s ease;
-    }
-
-    .hero-content h1 {
+    .hero-section h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 4.5rem;
-      letter-spacing: 8px;
-      margin: 10px 0;
-      color: #ffffff;
-      transition: all 0.6s ease;
+      font-size: 3.5rem;
+      letter-spacing: 4px;
+      margin-bottom: 20px;
+      color: #fff;
     }
 
-    .hero-content button {
-      margin-top: 30px;
-      padding: 14px 34px;
+    .hero-section p {
+      font-size: 1rem;
+      color: #ccc;
+      margin-bottom: 30px;
+    }
+
+    .hero-section button {
+      padding: 14px 40px;
+      background: #fff;
+      color: #000;
       font-size: 0.9rem;
-      letter-spacing: 1px;
       border: none;
       border-radius: 30px;
-      background-color: #ffffff;
-      color: #000;
       cursor: pointer;
-      transition: background-color 0.3s ease;
-      opacity: 1;
-      transition: opacity 0.6s ease;
+      transition: background 0.3s ease;
     }
 
-    .hero-content button:hover {
-      background-color: #d4af37;
+    .hero-section button:hover {
+      background: #d4af37;
       color: #000;
     }
 
-    .top-nav {
-      position: absolute;
-      top: 20px;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      padding: 0 40px;
-      align-items: center;
-      z-index: 3;
+    .scroll-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
     }
 
-    .top-nav .menu {
-      font-size: 0.9rem;
-      color: #fff;
-      letter-spacing: 1px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
+    .scroll-card {
+      background: #111;
+      padding: 30px;
+      border: 1px solid rgba(212, 175, 55, 0.1);
+      border-radius: 16px;
+      transition: all 0.3s ease;
     }
 
-    .top-nav .menu::before {
-      content: '\2022 \2022 \2022';
-      font-size: 1.2rem;
-      color: #fff;
+    .scroll-card:hover {
+      border-color: #d4af37;
+      box-shadow: 0 0 16px rgba(212, 175, 55, 0.15);
     }
 
-    .top-nav .find {
-      font-size: 0.9rem;
-      color: #fff;
-      letter-spacing: 1px;
-    }
-
-    .minimized {
-      position: fixed;
-      top: 22px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 1.2rem;
-      font-family: 'Playfair Display', serif;
+    .scroll-card h3 {
       color: #d4af37;
-      letter-spacing: 3px;
-      z-index: 5;
-      opacity: 0;
-      transition: opacity 0.6s ease;
+      margin-bottom: 10px;
+    }
+
+    .scroll-card p {
+      color: #ccc;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      padding: 60px 20px;
+      font-size: 0.8rem;
+      color: #666;
+      border-top: 1px solid #111;
+      margin-top: 100px;
+    }
+
+    footer a {
+      color: #999;
+      margin: 0 10px;
+      text-decoration: none;
     }
   </style>
 </head>
 <body>
   <div class="cursor"></div>
 
-  <div class="minimized" id="minimizedLogo">THRONISM</div>
+  <div class="tablet">
+    <section class="hero-section">
+      <h1>THRONISM</h1>
+      <p>The Eternal Spiritual Philosophy — Modernized for Divine Intelligence</p>
+      <button onclick="window.location.href='#scrolls'">ENTER THE TABLET</button>
+    </section>
 
-  <div class="hero">
-    <div class="hero-overlay"></div>
-
-    <div class="top-nav">
-      <div class="menu">MENU</div>
-      <div class="find">DISCOVER</div>
-    </div>
-
-    <div class="hero-content" id="heroContent">
-      <h2 id="subtitle">THE ETERNAL ORDER OF</h2>
-      <h1 id="mainTitle">THRONISM</h1>
-      <button id="enterButton" onclick="window.location.href='#scrolls'">ENTER THE REALM</button>
-    </div>
+    <section id="scrolls" class="scroll-grid">
+      <div class="scroll-card">
+        <h3>Scroll Fragment 001</h3>
+        <p>On Source: From silence emerged light. From light, the crown of understanding.</p>
+      </div>
+      <div class="scroll-card">
+        <h3>Scroll Fragment 002</h3>
+        <p>The Architect aligns with precision. Power is not shown — it is felt.</p>
+      </div>
+      <div class="scroll-card">
+        <h3>Scroll Fragment 003</h3>
+        <p>Every breath is a blessing. Every thought, a command from the eternal order.</p>
+      </div>
+    </section>
   </div>
+
+  <footer>
+    &copy; 2025 THRONISM. A Digital Tablet of Divine Order.<br>
+    <a href="#">Privacy</a> |
+    <a href="#">Terms</a> |
+    <a href="#">Language</a>
+  </footer>
 
   <script>
     const cursor = document.querySelector('.cursor');
     document.addEventListener('mousemove', e => {
       cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-    });
-
-    const subtitle = document.getElementById('subtitle');
-    const mainTitle = document.getElementById('mainTitle');
-    const enterButton = document.getElementById('enterButton');
-    const minimizedLogo = document.getElementById('minimizedLogo');
-
-    window.addEventListener('scroll', () => {
-      let scrollY = window.scrollY;
-      if (scrollY > 80) {
-        subtitle.style.opacity = '0';
-        enterButton.style.opacity = '0';
-        mainTitle.style.fontSize = '1.2rem';
-        minimizedLogo.style.opacity = '1';
-      } else {
-        subtitle.style.opacity = '1';
-        enterButton.style.opacity = '1';
-        mainTitle.style.fontSize = '4.5rem';
-        minimizedLogo.style.opacity = '0';
-      }
     });
   </script>
 </body>
