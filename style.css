@@ -1,92 +1,79 @@
-@import url('https://fonts.cdnfonts.com/css/bugatti');
-
-* {
+/* BODY BASE */
+body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  background-color: #000;
+  height: 100vh;
+  overflow: hidden;
+  cursor: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-body, html {
-  height: 100%;
-  font-family: 'Bugatti Display', sans-serif;
-  color: white;
-  background-color: black;
-  overflow-x: hidden;
-}
-
-.main-header {
+/* GOLDEN CURSOR */
+.cursor {
   position: fixed;
   top: 0;
-  width: 100%;
-  padding: 20px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 10;
-  font-size: 14px;
-  color: white;
-  font-family: 'Bugatti Display', sans-serif;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  border: 2px solid #d4af37;
+  border-radius: 50%;
+  pointer-events: none;
+  box-shadow:
+    0 0 8px 2px rgba(212, 175, 55, 0.4),
+    0 0 14px 4px rgba(212, 175, 55, 0.2);
+  mix-blend-mode: lighten;
+  transition: transform 0.03s ease-out;
+  z-index: 9999;
 }
 
-.logo-text {
-  font-size: 26px;
-  font-weight: bold;
-  letter-spacing: 4px;
+/* BREATH PULSE */
+.pulse {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212,175,55,0.6) 0%, rgba(0,0,0,0) 70%);
+  opacity: 0;
+  animation: pulse-glow 2s infinite;
+  pointer-events: none;
+  transition: opacity 1.5s ease;
 }
 
-.hero {
-  position: relative;
-  height: 100vh;
-  width: 100%;
-  overflow: hidden;
+@keyframes pulse-glow {
+  0% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.2); opacity: 0.3; }
+  100% { transform: scale(1); opacity: 0.6; }
 }
 
-.bg-video {
+/* TAP AURA (Mobile) */
+.tap-aura {
   position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -2;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212,175,55,0.35) 0%, rgba(0,0,0,0) 70%);
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  animation: auraFade 0.8s ease-out forwards;
 }
 
-.overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.5), black);
-  z-index: -1;
+@keyframes auraFade {
+  from {
+    opacity: 1;
+    transform: scale(1) translate(-50%, -50%);
+  }
+  to {
+    opacity: 0;
+    transform: scale(2) translate(-50%, -50%);
+  }
 }
 
-.hero-content {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.hero-content h1 {
-  font-size: 3rem;
-  letter-spacing: 3px;
-  font-weight: bold;
-  margin-bottom: 20px;
-  font-family: 'Bugatti Display', sans-serif;
-}
-
-.cta {
-  padding: 12px 30px;
-  font-size: 12px;
-  letter-spacing: 2px;
-  background-color: transparent;
-  border: 1px solid white;
-  color: white;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-family: 'Bugatti Display', sans-serif;
-}
-
-.cta:hover {
-  background-color: white;
-  color: black;
+/* Hide cursor on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .cursor {
+    display: none;
+  }
 }
